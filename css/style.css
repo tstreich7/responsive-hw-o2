@@ -26,8 +26,8 @@ li {
 
 img {
     width: 100%;  /* Verhindert, dass die Bilder zu groß sind */
-    border-radius: 35px;
-    border: 5px solid blue;
+    border-radius: 35px; /* Rundet die Ecken der Bilder ab */
+    border: 5px solid black; /* Schwarzer Rahmen */
     object-fit: cover; /* Optional, sorgt dafür, dass das Bild richtig skaliert wird */
 }
 
