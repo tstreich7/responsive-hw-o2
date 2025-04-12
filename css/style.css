@@ -1,35 +1,115 @@
-html{
+html {
     scroll-behavior: smooth;
 }
+
 body {
     background-color: #dedede;
     padding: 5px;
     margin: 15px;
     font-size: 25px;
-    font-family:Arial, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 h1 {
     text-align: center;
-    font-family:Arial, sans-serif;
+    font-family: Arial, sans-serif;
     font-size: 1.95em;
 }
 
-h2{
-    text-align:center;
-  }
+h2 {
+    text-align: center;
+}
 
-li{
+li {
     margin-top: 20px;
 }
 
-img{
-    border: 5px solid blue;
+img {
+    width: 100%;  /* Verhindert, dass die Bilder zu groß sind */
     border-radius: 35px;
-    width: 100%;
-  }
+    border: 5px solid blue;
+    object-fit: cover; /* Optional, sorgt dafür, dass das Bild richtig skaliert wird */
+}
 
-.label{
+.color-img {
+    width: 100%;  /* Verhindert, dass die Bilder zu groß sind */
+    max-width: 200px; /* Maximale Breite für jedes Bild */
+    margin: 10px auto;
+    display: block;
+    border-radius: 35px;
+}
+
+.label {
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Mobile-First - Standard-Stil für das Grid */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Einspaltiges Layout für die mobile Ansicht */
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+figure {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+figcaption {
+    font-size: 1.2em;
+}
+
+/* Tablet-Ansicht bei 772px */
+@media (min-width: 772px) {
+    .grid {
+        grid-template-columns: 1fr 1fr; /* Zwei Spalten für Tablets */
+    }
+
+    figure {
+        border-radius: 50%; /* Kreisförmige Darstellung für die Figuren */
+    }
+
+    .grid figure:last-child {
+        grid-column: span 2; /* Letzte Figur nimmt beide Spalten ein */
+    }
+}
+
+/* Großbildansicht bei 992px */
+@media (min-width: 992px) {
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr; /* Drei Spalten für große Bildschirme */
+    }
+
+    /* Jede dritte Figur nimmt beide Spalten ein */
+    .grid figure:nth-child(3n) {
+        grid-column: span 2;
+    }
+
+    figure {
+        border-radius: 0; /* Entfernt den Randradius von allen Figuren */
+    }
+}
+
+/* Reduzierte Bewegung */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto; /* Entfernt das sanfte Scrollen */
+    }
+}
+
+/* Dunkles Farbschema */
+@media (prefers-color-scheme: dark) {
+    figure {
+        background-color: #333; /* Dunkler Hintergrund für die Figuren */
+        color: #fff; /* Helle Schriftfarbe */
+        border: 2px solid #000; /* Schwarzer Rand */
+    }
+
+    figcaption {
+        color: #ffeb3b; /* Gelbe Schriftfarbe für das Farbschema */
+    }
 }
