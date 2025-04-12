@@ -1,9 +1,10 @@
+/* Allgemeine Styles */
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Sanftes Scrollen */
 }
 
 body {
-    background-color: #dedede;
+    background-color: #dedede; /* Hintergrundfarbe */
     padding: 5px;
     margin: 15px;
     font-size: 25px;
@@ -24,6 +25,7 @@ li {
     margin-top: 20px;
 }
 
+/* Bilder */
 img {
     width: 100%;  /* Verhindert, dass die Bilder zu groß sind */
     border-radius: 35px; /* Rundet die Ecken der Bilder ab */
@@ -39,16 +41,11 @@ img {
     border-radius: 35px;
 }
 
-.label {
-    text-align: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-/* Mobile-First - Standard-Stil für das Grid */
+/* Grid-Layout */
 .grid {
     display: grid;
-    grid-template-columns: 1fr; /* Einspaltiges Layout für die mobile Ansicht */
-    grid-gap: 10px;
+    grid-template-columns: 1fr; /* Einspaltiges Layout für mobile Ansicht */
+    grid-gap: 10px; /* Abstand zwischen den Grid-Elementen */
     padding: 10px;
 }
 
@@ -63,8 +60,9 @@ figcaption {
     font-size: 1.2em;
 }
 
-/* Tablet-Ansicht bei 772px */
+/* Mobile-First - Standard-Stil für das Grid */
 @media (min-width: 772px) {
+    /* Tablet-Ansicht (mindestens 772px) */
     .grid {
         grid-template-columns: 1fr 1fr; /* Zwei Spalten für Tablets */
     }
@@ -80,6 +78,7 @@ figcaption {
 
 /* Großbildansicht bei 992px */
 @media (min-width: 992px) {
+    /* Großbildschirmansicht (mindestens 992px) */
     .grid {
         grid-template-columns: 1fr 1fr 1fr; /* Drei Spalten für große Bildschirme */
     }
